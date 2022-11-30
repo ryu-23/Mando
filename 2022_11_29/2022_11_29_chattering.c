@@ -1,28 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS  
 #include <stdio.h>
 
-int main() {
-	int Maxrpm = 3000;
-	float period1, period2;
-	int inputRpm, inputPulse;
-	float rpm, pulse;
+int main()
+{
+    int Max_rpm = 3000;
+    int num1, num2;
+    float rpm, pulse, hz, total_pulse ,min_period;
+    printf("insert rpm : ");
+    scanf("%d", &num1);
+    printf("insert pulse : ");
+    scanf("%d", &num2);
 
-	printf("rpm 입력 : ");
-	scanf_s("%d", &inputRpm);
-	printf("%d\n", inputRpm);
+    
+    rpm = num1;
+    pulse = num2;
+    rpm = rpm >= Max_rpm ? Max_rpm : rpm;
+        hz = rpm * (1.0 / 60.0);
+        total_pulse = hz * pulse;
+        min_period = 1 / total_pulse * 1000;
 
-	inputRpm = inputRpm > 3000 ? 3000 : inputRpm;	// max 3000 
-
-	printf("pulse 입력 : ");
-	scanf_s("%d", &inputPulse);
-	printf("%d\n", inputPulse);
-
-	rpm = inputRpm;
-	pulse = inputPulse;
-
-	period1 = ((rpm / 60) * pulse) ;	//frequency
-	period2 = 1 / period1 * 1000; // period  millisec
-
-	printf("%0.3f rpm 과 한바퀴 %0.3f pulse의 주기는  %0.3f ms입니다.", rpm, pulse, period2);
-
-	return 0;
+        printf("hz = %0.2f Hz \n", hz);
+        printf("min_period  = %0.2f msec \n", min_period);
+    
+    
+    return 0;
 }
