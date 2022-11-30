@@ -6,13 +6,13 @@ int main() {
 	int inputRpm, inputPulse;
 	float rpm, pulse;
 
-	printf("rpm ÀÔ·Â : ");
+	printf("rpm ì…ë ¥ : ");
 	scanf_s("%d", &inputRpm);
 	printf("%d\n", inputRpm);
 
 	inputRpm = inputRpm > 3000 ? 3000 : inputRpm;	// max 3000 
 
-	printf("pulse ÀÔ·Â : ");
+	printf("pulse ì…ë ¥ : ");
 	scanf_s("%d", &inputPulse);
 	printf("%d\n", inputPulse);
 
@@ -22,7 +22,7 @@ int main() {
 	period1 = ((rpm / 60) * pulse) ;	//frequency
 	period2 = 1 / period1 * 1000; // period  millisec
 
-	printf("%0.3f rpm °ú ÇÑ¹ÙÄû %0.3f pulseÀÇ ÁÖ±â´Â  %0.3f msÀÔ´Ï´Ù.", rpm, pulse, period2);
-
+	printf("%0.3f rpm ê³¼ í•œë°”í€´ %0.3f pulseì˜ ì£¼ê¸°ëŠ”  %0.3f msì…ë‹ˆë‹¤.", rpm, pulse, period2);
+//
 	return 0;
 }
