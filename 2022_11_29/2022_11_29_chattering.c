@@ -10,6 +10,8 @@ int main() {
 	scanf_s("%d", &inputRpm);
 	printf("%d\n", inputRpm);
 
+	inputRpm = inputRpm > 3000 ? 3000 : inputRpm;	// max 3000 
+
 	printf("pulse ют╥б : ");
 	scanf_s("%d", &inputPulse);
 	printf("%d\n", inputPulse);
